@@ -1,0 +1,48 @@
+
+<head>
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main-w3layouts wrapper">
+            <h1>Post a Ride</h1>
+            <div class="main-agileinfo">
+                <div class="agileits-top">
+                    <form (ngSubmit)= "createridesposted(newride)">
+                        <!-- to error: add class "has-danger" -->
+                        <div class="form-group">
+                          <label for= "postedby">Posted by</label>
+                          <input [(ngModel)]="newride.postedby" id="postedby" name="postedby" class="form-control form-control-sm" required="required"><br>
+                        </div>
+                        <div class="form-group">
+                          <label for= "from">From</label>
+                          <input [(ngModel)]="newride.from" id="from" name="from" required="required" class="form-control form-control-sm"><br>
+                          
+                        <!-- <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+                        </div>
+                        <div class="form-group">
+                            <label for= "to">To</label>
+                            <input [(ngModel)]="newride.to" id="to" name="to" required="required" class="form-control form-control-sm"><br>
+                      <!-- <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+                        </div>
+                        <div class="form-group">
+                            <label for= "date">Date</label>
+                            <input [(ngModel)]="newride.date" id="date" name="date" required="required" class="form-control form-control-sm" ><br>
+                      <!-- <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+                        </div>
+                        <div class="form-group">
+                            <label for= "cost">Cost</label>
+                            <input [(ngModel)]="newride.cost" id="cost" name="cost" required="required" class="form-control form-control-sm"><br>
+                      <!-- <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+                        </div>
+                        <div class="form-group">
+                            <label for= "vacancy">Vacancy</label>
+                            <input [(ngModel)]="newride.vacancy" id="vacancy" name="vacancy" required="required" class="form-control form-control-sm"><br>
+                      <!-- <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+                        </div>
+                      <button type="submit" class="btn btn-primary btn-block">Post</button>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    
