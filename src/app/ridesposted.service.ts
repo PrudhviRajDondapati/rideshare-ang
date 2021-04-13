@@ -38,7 +38,7 @@ export class RidespostedService {
     return this.http.post(this.rposturl, newRide)
       .toPromise()
       .then(response => {
-        response as Ridesposted;
+        response as unknown as Ridesposted;
         console.log("Created Successfully");
       })
       .catch(this.handleError);
@@ -57,11 +57,11 @@ export class RidespostedService {
   }
 
 
-  updateMusic(rpostid : string, ridesposted: Ridesposted): Promise<void | Ridesposted>{
+  updateridesposted(rpostid : string, ridesposted: Ridesposted): Promise<void | Ridesposted>{
     return this.http.put(this.rposturl + '/' + rpostid,ridesposted)
     .toPromise()
     .then(response =>
-      {response as Ridesposted} )
+      {response as unknown as Ridesposted} )
     .catch(this.handleError);
   }
 

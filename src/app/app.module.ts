@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,6 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
+import { RidespostedListComponent } from './ridesposted-list/ridesposted-list.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -28,12 +31,15 @@ import { ContactComponent } from './contact/contact.component';
     LoginComponent,
     RegisterComponent,
     ContactComponent,
+    RidespostedListComponent,
+    AboutComponent,
     
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    MatFormFieldModule,
    
     RouterModule.forRoot([
       {
