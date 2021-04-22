@@ -17,6 +17,8 @@ import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
 import { RidespostedListComponent } from './ridesposted-list/ridesposted-list.component';
 import { AboutComponent } from './about/about.component';
+import { PaypalComponent } from './paypal/paypal.component';
+import { SearchlistComponent } from './searchlist/searchlist.component';
 
 
 
@@ -33,6 +35,8 @@ import { AboutComponent } from './about/about.component';
     ContactComponent,
     RidespostedListComponent,
     AboutComponent,
+    PaypalComponent,
+    SearchlistComponent,
     
   ],
   imports: [

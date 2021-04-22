@@ -1,148 +1,1409 @@
-<!-- <div class="jumbotron text-center">
-    <h1>Ride Share Website</h1>
-    <p class="lead">Place where you can post and find your ride</p>
-    <div>
-        <a class="btn btn-primary" routerLinkActive="active" routerLink="register">Register</a> 
-        <a class="btn btn-primary" routerLinkActive="active" routerLink="login">Login</a> 
-    </div>
-</div> -->
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>RIDESHARE</title>
-        
-        
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HOME PAGE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+      <style>
+          * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
 
-            body {
-                font-family: sans-serif;
-            }
+a {
+    color: #999999;
+    text-decoration: none;
+    background-color: transparent;
+}
 
-            .intro {
-                height: 100vh;
-            }
+a:hover {
+    text-decoration: none;
+}
 
-            .intro video {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
+.container {
+    width: 86%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
-            .intro h1 {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-size: 40px;
-                color: yellow;
-            }
-
-            section {
-                height: 100vh;
-                color: black;
-            }
-
-            section h1 {
-                padding-top: 300px;
-                text-align: center;
-                font-size: 80px;
-            }
-        </style>
-        
-
-        
-    </head>
-    <body>
-        <div class="intro">
-            <h1>WELCOME TO RIDESHARE</h1>
-            <video src="../../assets/images/ride.mp4"></video>
-        </div>
-        <section>
-            <h1>THE NEW RIDE ERA</h1>
-        </section>
-        
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"
-            integrity="sha256-2p2tRZlPowp3P/04Pw2rqVCSbhyV/IB7ZEVUglrDS/c="
-            crossorigin="anonymous">
-        </script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"
-            integrity="sha256-peenofh8a9TIqKdPKIeQE7mJvuwh+J0To7nslvpj1jI="
-            crossorigin="anonymous">
-        </script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.js"
-            integrity="sha256-31FC/OT6XpfjAhj9FuXjw5/wPXXawCAjJQ29E23/XPk="
-            crossorigin="anonymous">
-        </script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
-            integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
-            crossorigin="anonymous">
-        </script>
-<!--        <script src="app.js"></script>-->
+.sidebar {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: -290px;
+    width: 290px;
+    height: 100%;
+    background-image: url("../images/bgimg.png");
+    background-repeat: no-repeat;
     
-        <script>
-            
-            const intro = document.querySelector(".intro");
-            const video = intro.querySelector("video");
-            const text = intro.querySelector("h1");
-            
-            //END SECTION
-            const section = document.querySelector("section");
-            const end = section.querySelector("h1");
+/*    background: #1b1f20;*/
+    transition: all .5s ease;
 
-            //SCROLLMAGIC
-            const controller = new ScrollMagic.Controller();
+}
 
-            //Scenes
-            let scene = new ScrollMagic.Scene({
-                duration: 9000,
-                triggerElement: intro,
-                triggerHook: 0
-            })
-            .addIndicators()
-            .setPin(intro)
-            .addTo(controller);
+.sidebar header {
+    font-size: 22px;
+    color: white;
+    padding-left: 40px;
+    /*    text-align: center;*/
+/*    background: #1B1F20;*/
+    line-height: 70px;
+    user-select: none;
 
-            //Text Animation
-            const textAnim = TweenMax.fromTo(text, 3, { opacity: 1 }, { opacity: 0 });
+}
 
-            let scene2 = new ScrollMagic.Scene({
-            duration: 3000,
-            triggerElement: intro,
-            riggerHook: 0
-            })
-                .setTween(textAnim)
-                .addTo(controller);
+.contact_form {
+    background-color: #f3dce4;
+    padding: 3rem !important;
+    height: 525px;
+}
 
-                //Video Animation
-                let accelamount = 0.1;
-                let scrollpos = 0;
-                let delay = 0;
+.contact_form textarea {
+    height: 10em !important;
+}
 
-                scene.on("update", e => {
-                scrollpos = e.scrollPos / 1000;
-            });
+.form-control {
+    height: 52px !important;
+}
 
-            setInterval(() => {
-                delay += (scrollpos - delay) * accelamount;
-                console.log(scrollpos, delay);
+form {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: white;
+}
 
-                video.currentTime = delay;
-            }, 33.3);
 
+#mySubmit {
+    margin-left: 8em;
+}
+
+iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 525px;
+}
+
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 19px;
+    color: white;
+    padding-left: 15px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid black;
+    transition: .5x;
+}
+.sidebar_2 a::after{
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color:red;
+}
+.sidebar_1 a::after{
+    content: '';
+    display: block;
+    height: 4px;
+    width: 0%;
+    background-color:yellow;
+    transition: all ease-in-out 250ms;
+}
+.sidebar_1 a:hover::after{
+    width: 100%;
+}
+.sidebar ul li:hover a {
+    color: #f5c53d;
+    text-shadow: 0 0 20px #fff, 0 0 30px #f5c53d, 0 0 40px #f5c53d;
+}
+
+.sidebar ul a i {
+    margin-right: 16px;
+}
+
+#check {
+    display: none;
+}
+
+label #btn,
+label #cancel {
+    position: absolute;
+    cursor: pointer;
+}
+
+label #btn {
+    position: fixed;
+    left: 40px;
+    top: 25px;
+    font-size: 28px;
+    color: black;
+    background-color: #ffffff40;
+    transition: all .5s ease;
+    border: .1em solid black;
+    border-radius: .1em;
+    padding: .2em .25em .15em;
+}
+
+label #cancel {
+    position: fixed;
+    z-index: 1111;
+    left: -200px;
+    top: 20px;
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+    transition: all .5s ease;
+}
+
+#check:checked ~ .sidebar {
+    left: 0;
+}
+
+#check:checked ~ label #btn {
+    opacity: 0;
+    left: 0;
+}
+
+#check:checked ~ label #cancel {
+
+    left: 255px;
+}
+
+#check:checked ~ section {
+
+    margin-left: 200px;
+}
+
+.site-hero {
+    background: url("../images/background3.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    transition: all .5s ease;
+
+}
+
+.table_content {
+    margin-left: 60px;
+
+}
+
+/*
+table{
+    margin-left: 90px;
+}
+*/
+.address {
+    width: 20%;
+    height: 20%;
+}
+
+.contactinfo {
+    width: 20%;
+    height: 20%;
+}
+
+.emailinfo {
+    width: 20%;
+    height: 20%;
+}
+
+.website {
+    width: 20%;
+    height: 20%;
+}
+
+.home_content {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    text-align: center;
+}
+
+.all_content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    text-align: center;
+}
+
+.all_contact {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    text-align: center;
+}
+.news_img1_back {
+    background-image: url(../images/taj1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 443px;
+}
+.news_img2_back {
+    background-image: url(../images/holiday-2880261_1920.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 443px;
+}
+.news_img3_back {
+    background-image: url(../images/london-3078109_1920.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 443px;
+}
+.home_text_large {
+    font-size: 130px;
+    font-weight: 900;
+    color: #fdaa27;
+    opacity: 0.74;
+    text-transform: uppercase;
+    line-height: 0.75;
+}
+
+.all_text_large {
+    font-size: 84px;
+    font-weight: 900;
+    color: #fbf2ea;
+    opacity: 0.74;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+
+.home_text_small {
+    position: absolute;
+    top: 51%;
+    left: 24%;
+    width: 100%;
+    font-size: 42px;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-shadow: 0px 11px 51px rgba(0, 0, 0, 0.35);
+}
+
+footer {
+    display: block;
+    overflow: auto;
+    padding: 2em;
+    margin-top: 5em;
+    background-color: black;
+    text-align: left;
+}
+
+.special-margin {
+  /*  margin-top: 52em;*/
+}
+
+.searchbar {
+    background: #1b1f20;
+    margin-top: -5%;
+    margin-left: 8%;
+    margin-right: 8%;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.outerRow {
+    position: relative;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+
+#search {
+    background: #7d4ac1;
+    text-align: center;
+}
+
+
+
+.text-block {
+    position: absolute;
+    font-size: 40px;
+    bottom: 60px;
+    font-weight: lighter;
+    left: 40px;
+    background-color: transparent;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.top_item_image {
+    width: 100%;
+}
+
+.top-image {
+    height: 350px;
+    overflow: hidden;
+}
+
+.top-image img {
+    height: 100%;
+    transform-origin: 50% 65%;
+    transition: transform 1s, filter 1s ease-in-out;
+    filter: brightness(150%);
+}
+
+.column-image {
+    height: 200px;
+    line-height: 270px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.contact_item {
+    text-align: center;
+}
+
+.contact-icon {
+    font-size: 110px;
+}
+
+.mg-top {
+    margin-top: 50px;
+}
+
+.top-image:hover img {
+    filter: brightness(100%);
+    transform: scale(1.5);
+}
+
+.contact-box {
+    padding-top: 20px;
+    /*    box-shadow: 0 0 1px black;*/
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.top_item .text {
+    position: relative;
+    padding: 1.5em 0 0 0;
+    transition: all 0.6s ease;
+}
+
+.top_item .text span {
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.79)
+}
+
+.top_item .text h4.price {
+    position: absolute;
+    top: -25px;
+    right: 10px;
+    padding: .4em .7em;
+    background: #22ff08;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.top_item .text h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.top_item .text h3 a {
+    color: #000000;
+}
+
+.disp-flex {
+    display: flex !important;
+}
+
+.mrgrgt-auto {
+    margin-right: auto !important;
+}
+
+.float-left {
+    float: left !important;
+}
+
+.top_item .text .star i {
+    color: #ffb400;
+}
+
+.places {
+    background: white transparent no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 150px;
+    width: 100%;
+
+}
+
+.places p {
+    margin-top: 80px;
+    margin-left: 150px;
+    margin-right: 150px;
+
+}
+
+.imagearea {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.single-img {
+    padding: 0 20px 20px;
+    position: relative;
+}
+
+.places p {
+    font-size: 40px;
+    padding-bottom: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.slider-cont {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.slider {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    border: 2px solid #000;
+    position: relative;
+}
+.new-contact {
+    background: url("../images/background11.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    width: 100%;
+    transition: all .5s ease;
+}
+.new-news {
+    background: url("../images/news.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    width: 100%;
+    transition: all .5s ease;
+}
+.spec_adj {
+    width: 84%;
+    margin-left: 8%;
+}
+
+.slide {
+    position: relative;
+    background: #0f0;
+    height: 100%;
+    flex: 1;
+    border-right: 2px solid black;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+section .slide:hover {
+    flex-grow: 5;
+}
+
+section .slide:last-child {
+    border-right: none;
+}
+
+section .slide .content {
+    position: absolute;
+    bottom: 0;
+    margin: 40px;
+    padding: 30px;
+    background: black;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0s;
+    transform: translateY(100px);
+}
+
+section .slide:hover .content {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+    transition-delay: 0.3s;
+    transform: translateY(0px);
+}
+
+section .slide:nth-child(1) {
+    background-image: url(../images/france1.jpg);
+    background-position: center center;
+}
+
+section .slide:nth-child(2) {
+    background-image: url(../images/thailand1.jpg);
+    background-position: center center;
+}
+
+section .slide:nth-child(3) {
+    background-image: url(../images/india1.jpg);
+    background-position: center center;
+}
+
+section .slide:nth-child(4) {
+    background-image: url(../images/switzerland.jpg);
+    background-position: center center;
+}
+
+section .slide:nth-child(5) {
+    background-image: url(../images/sydney-363244_1920.jpg);
+    background-position: center center;
+}
+
+.mobile {
+    display: none;
+}
+
+
+
+/* Alias */
+.new-hotels {
+    background: url("../images/background20.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    transition: all .5s ease;
+}
+
+.head_text_large {
+    font-size: 84px;
+    font-weight: 900;
+    color: white;
+    opacity: .8;
+    text-transform: uppercase;
+    line-height: 0.75;
+
+}
+.top-image2{
+    height: 500px;
+}
+.top_item_image2 {
+    width: 100%;
+    height: 470px
+}
+
+.contactDIv{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+/* Manu */
+
+.new-destination {
+    background: url("../images/background6.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    transition: all .5s ease;
+}
+
+.new-about {
+    background: url("../images/background10.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    transition: all .5s ease;
+}
+
+
+.box_tittle {
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 24px;
+    font-weight: 300;
+    color: #131a2f;
+    padding-left: 22px
+}
+
+.box_icon {
+    font-size: 48px;
+    color: #afafaf;
+}
+
+.box:hover .box_tittle,
+.box:hover .box_icon {
+    color: #fe3c52;
+    cursor: pointer;
+}
+
+.icon_box_text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 2;
+    font-weight: 300;
+    color: #7d8293;
+    margin-top: 14px;
+}
+
+.section_title {
+    padding-top: 30px;
+    line-height: 1.1;
+    padding-bottom: 30px;
+}
+
+.text .number {
+    font-weight: 600;
+    font-size: 28px;
+    color: #000000;
+}
+
+.text .span {
+    display: block;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+}
+
+.box_block {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 1.5rem;
+    background-color: #f3dce4;
+}
+
+.about_img_back {
+    background-image: url(../../assets/images/background5.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 443px;
+}
+
+.about_img2_back {
+    background-image: url(../../assets/images/background55.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 443px;
+}
+
+.about-wanter {
+    background-color: #fff2f2;
+    margin-top: 30px;
+}
+
+.rem_pad {
+    padding: 0px !important;
+}
+
+.button {
+    display: inline-block;
+    width: 161px;
+    height: 56px;
+    background: #473476;
+    text-align: center;
+}
+
+.button a {
+    display: block;
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: 500;
+    line-height: 56px;
+}
+
+.about_button {
+    margin-top: 48px;
+    margin-bottom: 8px;
+}
+
+.logo {
+    color: #ffb916;
+    font-weight: bold;
+    text-align: center;
+}
+
+.footerDiv{
+    text-align: center;
+}
+.footerDiv h4{
+    
+    color: rgba(255,255,255,.7);
+}
+.copyright{
+    text-align:center; 
+}
+
+.footer-social{
+    list-style: none;
+    padding-left: 0px;
+}
+
+.footer-social li {
+    list-style: none;
+    margin: 0 10px 0 0;
+    display: inline-block;
+}
+
+.footer-social li a {
+    height: 50px;
+    width: 50px;
+    display: block;
+    float: left;
+    background: rgba(255,255,255,.05);
+    border-radius: 50%;
+    position: relative;
+}
+.footer-social li a i{
+    position: absolute;
+    font-size: 26px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.ReportTable {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 2px;
+    border-color: grey;
+
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+}
+
+.ReportTable th {
+    font-family: Lato-Bold;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.4;
+    background-color: #402f6a;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    text-align: center;
+}
+
+.ReportTable td {
+    font-family: Lato-Regular;
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.4;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 5px;
+    text-align: center;
+}
+body, header{
+    width: 100%;
+}
+.ReportTable tr:nth-child(even) {
+    background-color: #f8f6ff;
+}
+
+.ReportTable .tblBody:hover{
+    background-color: #d9ccf9;
+    color: #303030;
+    cursor: pointer;
+}
+/*Tablet*/
+@media only screen and (max-width: 1200px) {
+    .top_col {
+        flex-basis: 50%;
+        margin-bottom: 30px;
+        padding:0% 5%;
+    }
+
+    .home_text_large {
+        font-size: 82px;
+    }
+
+    .home_text_small {
+        font-size: 27px;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+    .contactElement{
+        flex-basis: 98%;
+        margin-bottom: 20px;
+        padding:5px;
+    }
+    .footerDiv{
+        text-align: center;
+    }
+}
+
+/*Mobile*/
+@media only screen and (max-width: 768px) {
+    .top_col {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+        padding:0% 20%;
+    }
+
+    .home_text_large {
+        font-size: 42px;
+    }
+
+    .home_text_small {
+        font-size: 17px;
+    }
+   
+    .sidebar {
+        background: black;
+        width: 350px;
+        left: -100%;
+    }
+    .slider{
+        display: none;
+    }
+    .special-margin{
+        margin-top: 0em;        
+    }
+    .site-header{
+        width: 80%;
+    }
+    #check:checked ~ .sidebar {
+        left: 0;
+    }
+
+    #check:checked ~ label #cancel {
+        left: 75%;
         
-        </script>
-    </body>
+    }
+    .all_text_large{
+        font-size: 42px;
+    }
+    .head_text_large{
+        font-size: 50px;
+    }
+    .footerSection{
+        margin-bottom: 15px;
+    }
+    
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr { 
+        border: 1px solid #ccc; 
+    }
+    td { 
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative; 
+        text-align: center !important;
+    }
+    td:before { 
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px; 
+        white-space: nowrap;
+        text-align: left;
+        padding-left: 30px;
+        font-weight: bold;
+    }
+    .ReportTable td:nth-of-type(1):before { content: "Name"; }
+    .ReportTable td:nth-of-type(2):before { content: "Designation"; }
+    .ReportTable td:nth-of-type(3):before { content: "Contact No"; }
+    .ReportTable td:nth-of-type(4):before { content: "Email"; }
+    .ReportTable td:nth-of-type(5):before { content: "Location"; }
+   
+    .tblHead{
+        display: none;
+    }
+}
+          
+          *{
+              margin: 0;
+              padding: 0;
+              font-family: sans-serif;
+          }
+          .banner{
+              width: 100%;
+              height: 100vh;
+              background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../../assets/images/background.jpg);
+              background-size: cover;
+              background-position: center;
+          }
+          .navbar{
+              width: 85%;
+              margin: auto;
+              padding: 35px 0;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+          }
+          .logo{
+              width: 120px;
+              cursor: pointer;
+          }
+          .navbar ul li{
+              list-style: none;
+              display: inline-block;
+              margin: 0 20px;
+              position: relative;
+          }
+          .navbar ul li a{
+              text-decoration: none;
+              color: #fff;
+              text-transform: uppercase;
+          }
+          .navbar ul li:after{
+              content: '';
+              height: 3px;
+              width: 0;
+              background: #009688;
+              position: absolute;
+              left: 0;
+              bottom: -10px;
+              transition: 0.5s;
+          }
+          .navbar ul li:hover::after{
+              width: 100%;
+          }
+          .content{
+              width: 100%;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              text-align: center;
+              color: #fff;
+          }
+          .content h1{
+              font-size: 70px;
+              margin-top: 80px;
+          }
+          .content p{
+              margin: 20px auto;
+              font-weight: 100;
+              line-height: 25px;
+          }
+          button{
+              width: 200px;
+              padding: 15px 0;
+              text-align: center;
+              margin: 20px 10px;
+              border-radius: 25px;
+              font-weight: bold;
+              border: 2px solid #009688;
+              background: transparent;
+              color: #fff;
+              cursor: pointer;
+              position: relative;
+              overflow: hidden;
+          }
+          span{
+              background: #009688;
+              height: 100%;
+              width: 100%;
+              border-radius: 25px;
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              z-index: -1;
+              transition: 0.5s;
+          }
+          button:hover span{
+              width: 100%;
+          }
+          button:hover{
+              border: none;
+          }
+          
+          
+          
+          
+          
+          
+          *{
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat",sans-serif;
+}
+.testimonials{
+  padding: 40px 0;
+  background: #f1f1f1;
+  color: #434343;
+  text-align: center;
+}
+.inner{
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
 
+.border{
+  width: 160px;
+  height: 5px;
+  background: #6ab04c;
+  margin: 26px auto;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.col{
+  flex: 33.33%;
+  max-width: 33.33%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.testimonial{
+  background: #fff;
+  padding: 30px;
+}
+.testimonial img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.name{
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+.stars{
+  color: #6ab04c;
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-width:960px) {
+.col{
+  flex: 100%;
+  max-width: 80%;
+}
+}
+
+@media screen and (max-width:600px) {
+.col{
+  flex: 100%;
+  max-width: 100%;
+}
+}
+          
+      </style>
+    </head>
+  <body>
+      
+      <div class="banner">
+          <div class="navbar">
+              <img src="../../assets/images/ridelogo (1).png" width="5%" height="5%" class="logo">
+              <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Rides Posted</a></li>
+                  <li><a href="#">Rides Opted</a></li>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Contact us</a></li>
+                  <li><a href="#">Login</a></li>
+                  <li><a href="#">Sign up</a></li>
+              </ul>
+          </div>
+          
+          <div class="content">
+              <h1>RIDESHARE</h1>
+              <p>One stop for all your rides.One stop for all your rides.One stop for all your rides.One stop for all your rides.</p>
+              <div>
+                  <button type="button"><span></span>FIND A RIDE</button>
+                  <button type="button"><span></span>POST A RIDE</button>
+              </div>
+          </div>
+          
+      </div>
+      
+      <section>
+        <div class="outerRow">
+            <div class="searchbar">
+                <form (ngSubmit)= "searchresult(search)">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3">
+                            <label for="from">From</label>
+                          <input [(ngModel)]="search.from" id="from" name="from" required="required" class="form-control form-control-sm"><br>
+
+                         </div>
+                        <div class="col-md-6 col-lg-3">
+                            <label for="to">To</label>
+                            <input [(ngModel)]="search.to" id="to" name="to" required="required" class="form-control form-control-sm"><br>
+                        </div>
+                        <div class="col-md-6 col-lg-2">
+                            <label for="date">Date</label>
+                            <input [(ngModel)]="search.date" id="date" name="date" required="required" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control form-control-sm" ><br>
+                        </div>
+                        <!-- <div class="col-md-6 col-lg-2">
+                            <label for="Check-Out Date">Check-Out Date</label>
+                            <input class="form-control" placeholder="Check-out date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="checkoutdate" id="checkoutdate" required>
+                        </div> -->
+                        <div class="col-md-6 col-lg-2">
+                            <button type="submit" class="btn btn-primary btn-block">Search</button>
+                             
+                         </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title text-center">
+                        <h2>We are an award winning Agency</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row about-wanter">
+                <div class="col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-12 heading-section">
+                                <p class="icon_box_text">Our first hand knowledge of exotic destinations and luxury brands, will provide you incredible value and unforgettable experiences for your next trip. Start your journey with RideShare Travel and let us create for you memorable trips that will last a lifetime.
+                                </p><p class="icon_box_text">RideShare Travel TPI covers all aspects of travel arrangements from corporate to leisure. We are proud to be an associated agency of Travel Professionals International and an affiliate of Virtuoso, both of which means we can offer our clients extra benefits exclusive to the program and have access to insights from 800 travel advisors. We are a TICO registered agency, which offers peace of mind security for the consumer.</p>
+                                <div class="button about_button"><a href="#">Read More</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 rem_pad">
+                    <div class="about_img2_back">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title text-center">
+                        <h2>Popular services that we offer</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 box">
+                    <div class="box">
+                        <i class='fas fa-umbrella-beach box_icon'></i>
+                        <span class="box_tittle">Weekend Trips</span>
+                    </div>
+                    <p class="icon_box_text">
+                        Weekend getaways let you take a break for a few days to recharge from the hustle and bustle of city life. These spots are all located within a few hours of the city and include provincial parks, cities and culinary escapes.
+                    </p>
+                </div>
+                <div class="col-md-4 box">
+                    <div class="box">
+                        <i class='fas fa-suitcase-rolling box_icon'></i>
+                        <span class="box_tittle">Fun leisure trips</span>
+                    </div>
+                    <p class="icon_box_text">
+                        Taking it easy,
+                        Travelling at your own pace gives you time to soak in the sights, sounds and sensations of your destination. Maybe you’re thinking about the annual family island vacation, or perhaps a romantic week in a European city.
+                    </p>
+                </div>
+                <div class="col-md-4 box">
+                    <div class="box">
+                        <i class='fas fa-plane-departure box_icon'></i>
+                        <span class="box_tittle">Plane tickets</span>
+                    </div>
+                    <p class="icon_box_text">
+                        Get cheap rides with RideShare! We find you the cheapest air tickets and last minute flight deals by comparing hundreds of other travel sites for free.Trip.com goes the extra mile to help you find the best choice of flight tickets and discount airfares to destinations all around the world.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row about-wanter">
+                <div class="col-md-6 col-sm-12 rem_pad">
+                    <div class="about_img_back">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-12 heading-section">
+                                <h2 class="text-center">About Rideshare</h2>
+                                <p class="icon_box_text">Search the Government of Canada’s travel advisories for important information about your destination.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="box_block">
+                                    <div class="text text-center">
+                                        <strong class="number">30 <br> New Deals</strong>
+                                        <span class="span">New Deals</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="box_block">
+                                    <div class="text text-center">
+                                        <strong class="number">17 <br> Awards</strong>
+                                        <span class="span">Awards</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="box_block">
+                                    <div class="text text-center">
+                                        <strong class="number">895 <br> New Rides</strong>
+                                        <span class="span">New Tours</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="box_block">
+                                    <div class="text text-center">
+                                        <strong class="number">1,12,000 <br> Happy Customers</strong>
+                                        <span class="span">Happy Customers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+      
+      
+      
+      
+      
+
+    <div class="testimonials">
+      <div class="inner">
+        <h1>Testimonials</h1>
+        <div class="border"></div>
+
+        <div class="row">
+          <div class="col">
+            <div class="testimonial">
+              <img src="../../assets/images/p1.png" alt="">
+              <div class="name">Full name</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              </p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="testimonial">
+              <img src="../../assets/images/p2.png" alt="">
+              <div class="name">Full name</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              </p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="testimonial">
+              <img src="../../assets/images/p3.png" alt="">
+              <div class="name">Full name</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
 </html>

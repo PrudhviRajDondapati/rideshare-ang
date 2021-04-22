@@ -23,6 +23,7 @@
     "bcrypt": "^5.0.1",
     "bootstrap": "^3.4.1",
     "console": "^0.7.2",
+    "creditcardpayments": "^1.0.3",
     "jquery": "^3.6.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

@@ -20,4 +20,9 @@ export class RidesoptedComponent implements OnInit { rides!: Ridesopted[];
   },err=>console.log(err));
   }
 
+  public Paypal(){
+    this.router.navigate(['paypal']);
+
+  }
+
 }

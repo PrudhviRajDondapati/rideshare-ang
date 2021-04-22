@@ -7,7 +7,10 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RidespostedListComponent } from './ridesposted-list/ridesposted-list.component';
 import{ AboutComponent } from './about/about.component';
-
+import{ ContactComponent } from './contact/contact.component';
+import{ PaypalComponent } from './paypal/paypal.component'
+import{ SearchlistComponent } from './searchlist/searchlist.component'
+SearchlistComponent
 
 const appRoutes: Routes = [
   {
@@ -26,6 +29,20 @@ const appRoutes: Routes = [
     path:'About',
     component: AboutComponent
   },
+  {
+    path:'contact',
+    component: ContactComponent
+  },
+  {
+    path:'paypal',
+    component: PaypalComponent
+  },
+  {
+    path:'searchlist',
+    component: SearchlistComponent
+  },
+  
+  
   {
     path:'login',
     component: LoginComponent
