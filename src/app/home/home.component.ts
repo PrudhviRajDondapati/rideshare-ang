@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
     localStorage.setItem('from',search.from);
     localStorage.setItem('to',search.to);
     localStorage.setItem('date',search.date);
+    // this.http.post(this.searchurl, searchlist);
     
     this.router.navigate(['searchlist']);
     

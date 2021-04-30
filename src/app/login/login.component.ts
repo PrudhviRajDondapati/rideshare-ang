@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
     console.log("Response : ",s);
     console.log(this.uname);
     localStorage.setItem('username',this.uname);
+    localStorage.setItem('loginstatus','True');
     const un = localStorage.getItem('username');
     console.log(un);
   

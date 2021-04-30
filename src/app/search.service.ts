@@ -8,7 +8,7 @@ import { delay } from 'q';
   providedIn: 'root'
 })
 export class SearchService {
-  private searchurl = 'http://localhost:3000/api/search' ;
+  searchurl = 'http://localhost:3000/api/search' ;
 
   constructor(private http: HttpClient) { }
   getsearchresults(from:string | null, to:string | null, date:string |null){
@@ -23,7 +23,7 @@ export class SearchService {
     return this.http.get<Ridesopted[]>(this.searchurl);
   }
 
-  private savedata(searchlist: any){
+  public savedata(searchlist: any){
 
     console.log("kothafun");
 

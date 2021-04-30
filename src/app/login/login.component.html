@@ -10,7 +10,7 @@
       <!-- Login Form -->
       <form (ngSubmit)= "loginuser(user)">
         <input type="text" [(ngModel)]="user.login" id="login" class="fadeIn second" name="login" placeholder="login">
-        <input type="text" [(ngModel)]="user.password" id="password" class="fadeIn third" name="password" placeholder="password"><br>
+        <input type="password" [(ngModel)]="user.password" id="password" class="fadeIn third" name="password" placeholder="password"><br>
         <mat-error *ngIf="error">{{error}}</mat-error><br>
         <input type="submit" class="fadeIn fourth" value="Log In">
       </form>

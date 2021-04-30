@@ -211,7 +211,7 @@ input:focus:invalid {
 */
             
 /*            To make the page responsive*/
-            @media(max-width:1200px)
+            @media(max-width : 1200px)
             {
                 .container
                 {
@@ -220,10 +220,10 @@ input:focus:invalid {
                     margin: 20px;
                     box-shadow: 0 20px 50px rgba(0,0,0,0.2);
                 }
-                .contactInfo
+                .container .contactInfo
                 {
                     top: 0;
-                    height: 500px;
+                    height: 550px;
                     position: relative;
                     box-shadow: none;
                 }
@@ -303,7 +303,7 @@ input:focus:invalid {
                     <h2>Contact Info</h2>
                     <ul class="info">
                         <li>
-                            <span><img src="../../assets/images/location.png"></span>
+                            <span><img src="location.png"></span>
                             <span>
                                 299 Doon Campus<br>
                                 Kitchener, ON<br>
@@ -311,29 +311,30 @@ input:focus:invalid {
                             </span>
                         </li>
                         <li>
-                            <span><img src="../../assets/images/mail.png"></span>
+                            <span><img src="mail.png"></span>
                             <span>rideshare@conestoga.com</span>
                         </li>
                         <li>
-                            <span><img src="../../assets/images/call.png"></span>
+                            <span><img src="call.png"></span>
                             <span>555-333-9999</span>
                         </li>
                     </ul>
                 </div>
                     <ul class="sci">
-                        <li><a href="#"><img src="../../assets/images/1.png"></a></li>
-                        <li><a href="#"><img src="../../assets/images/2.png"></a></li>
-                        <li><a href="#"><img src="../../assets/images/3.png"></a></li>
-                        <li><a href="#"><img src="../../assets/images/4.png"></a></li>
-                        <li><a href="#"><img src="../../assets/images/5.png"></a></li>
+                        <li><a href="#"><img src="1.png"></a></li>
+                        <li><a href="#"><img src="2.png"></a></li>
+                        <li><a href="#"><img src="3.png"></a></li>
+                        <li><a href="#"><img src="4.png"></a></li>
+                        <li><a href="#"><img src="5.png"></a></li>
                     </ul>
                 </div>
                 
                 <div class="contactForm">
                     <h2>Send a Message</h2>
+                    <form (ngsubmit) ="Contactform()">
                     <div class="formBox">
                         <div class="inputBox w50">
-                            <input type="text" required>
+                            <input type="text" name="fname" required>
                             <span>First Name</span>
                         </div>
                         <div class="inputBox w50">
@@ -341,7 +342,7 @@ input:focus:invalid {
                             <span>Last Name</span>
                         </div>
                         <div class="inputBox w50">
-                            <input type="email" required>
+                            <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                             <span>Email Address</span>
                         </div>
                         <div class="inputBox w50">
@@ -353,9 +354,11 @@ input:focus:invalid {
                             <span>Write your message here.....</span>
                         </div>
                         <div class="inputBox w100">
-                            <input type="submit" value="Send">
+                             <button type="submit" class="btn btn-primary btn-block">Send</button>
+                            
                         </div>
                     </div>
+                        </form>
                     
                 </div>
             </div>
